@@ -1,0 +1,16 @@
+#!/bin/bash
+#SBATCH -J MYJOB
+#SBATCH -p workq
+#SBATCH --mem=12G
+#SBATCH --mail-type=BEGIN,END,FAIL
+
+module purge
+module load system/singularity-3.7.3
+module load bioinfo/Nextflow-v21.10.6
+
+export NFE2P2=/PATH/TO/NF-E2P2/DIRECTORY
+export PROTEOME=/PATH/TO/PROTEOME
+$NFE2P2/nf-e2p2.sh --slurm  \
+ --verbose -profile debug,genotoul \
+ --e2p2_version 4 \
+ --proteome $PROTEOME
