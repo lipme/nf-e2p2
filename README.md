@@ -19,7 +19,7 @@ Nextflow version of E2P2 Pipeline
 #Load mandatory modules/environment (Singularity & NextFlow)
 
 Usage:
-./nf-e2p2.sh [--parameters] [--slurm] --proteome <path to fasta file> 
+./nf-e2p2.sh [--parameters] [--slurm] --proteome <FULL path to fasta file> 
 
 #more details
 ./nf-e2p2.sh --parameters
