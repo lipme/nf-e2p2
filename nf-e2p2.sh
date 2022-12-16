@@ -55,11 +55,12 @@ else
      mkdir -p $RUNDIR/runs/$SEQNAME-$RUNID/singularity
      mkdir -p $RUNDIR/runs/$SEQNAME-$RUNID/logs
      rm -f $RUNDIR/runs/$SEQNAME-$RUNID/logs/latest.*
+	 echo -e "${PURPLE}\n[RUNID]\t >>>>  $SEQNAME-$RUNID  <<<< ${NC}\n\n"
      echo -e "${INFO}[INFO] Launch:  ${NC}\n\tnextflow run $RUNDIR/main.nf  -resume $ARGS \n\n"
-     echo -e "${INFO}[INFO] Results directory\t$RUNDIR/runs/$SEQNAME-$RUNID/results-$DATE${NC}"
-     echo -e "${INFO}[INFO] Logs    directory\t$RUNDIR/runs/$SEQNAME-$RUNID/logs${NC}"
-     echo -e "${INFO}[INFO] Work    directory\t$RUNDIR/runs/$SEQNAME-$RUNID/work${NC}"
-     echo -e "${INFO}[INFO] Apps    directory\t$RUNDIR/runs/$SEQNAME-$RUNID/singularity${NC}"
+     echo -e "${INFO}[INFO] Results directory\t./runs/$SEQNAME-$RUNID/results-$DATE${NC}"
+     echo -e "${INFO}[INFO] Logs    directory\t./runs/$SEQNAME-$RUNID/logs${NC}"
+     echo -e "${INFO}[INFO] Work    directory\t./runs/$SEQNAME-$RUNID/work${NC}"
+     echo -e "${INFO}[INFO] Apps    directory\t./runs/$SEQNAME-$RUNID/singularity${NC}"
      cd $RUNDIR/runs/$SEQNAME-$RUNID/logs/
      ln -s $DATE.nextflow.log latest.nextflow.log
      ln -s $DATE.stdout latest.stdout
@@ -83,9 +84,14 @@ else
           -work-dir $RUNDIR/runs/$SEQNAME-$RUNID/work \
           --outdir $RUNDIR/runs/$SEQNAME-$RUNID/results-$DATE \
           > $RUNDIR/runs/$SEQNAME-$RUNID/logs/$DATE.stdout ) 2> $RUNDIR/runs/$SEQNAME-$RUNID/logs/$DATE.stderr&
+          echo -e "${NC}[TIP] Kill Main Process\t\$ ./utils/killRun.sh $SEQNAME-$RUNID${NC}"
+     
      fi
      cd $RUNDIR
-     echo -e "${NC}[TIP] Follow execution\t\$ tail -f $RUNDIR/runs/$SEQNAME-$RUNID/logs/latest.stdout${NC}"
+     echo -e "${NC}[TIP] Follow execution\t\$ tail -f ./runs/$SEQNAME-$RUNID/logs/latest.stdout${NC}"
+     echo -e "${NC}[TIP] Failed Tasks\t\$ ./utils/failedTasks.sh $SEQNAME-$RUNID${NC}"
+     echo -e "${NC}[TIP] Count Tasks\t\$ ./utils/countTasks.sh $SEQNAME-$RUNID${NC}"
+     
 
   else
      echo -e "${ERROR}[ERROR] There's an already running job for this sequence${NC}"
