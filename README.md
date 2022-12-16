@@ -42,7 +42,7 @@ runs
 ```
 
 - RUNHASH is computed with sequence file content en config file content (command line are not taken into account)
-- `singularity` directory contains aumatically retrieved containers (from <https://lipm-browsers.toulouse.inra.fr/pub/singularity-repository/egnep/$VERSION/> )
+- `singularity` directory contains aumatically retrieved containers (from <https://lipm-browsers.toulouse.inra.fr/pub/singularity-repository/functional_annotation/> )
 - `work` directory contains task directories - WARNING : can become huge in size
 - `results` directory contains final files
 
