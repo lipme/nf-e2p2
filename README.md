@@ -1,10 +1,12 @@
 # NF-E2P2
 
-Nextflow version of E2P2 Pipeline
+NextFlow pipeline to run E2P2 software (versions 3 or 4) in batch mode.
 
 ## INSTALL
 
-### PRE-REQUISITES
+E2P2 Singularity/Apptainers are automatically downloaded, no installation need (except Singularity and NextFlow).
+
+You need to install:
 
 - wget
 - gzip
@@ -19,11 +21,10 @@ Nextflow version of E2P2 Pipeline
 #Load mandatory modules/environment (Singularity & NextFlow)
 
 Usage:
-./nf-e2p2.sh [--parameters] [--slurm] --proteome <FULL path to fasta file> 
+./nf-e2p2.sh [--parameters] [--slurm] --proteome <FULL path to fasta file> [ --e2p2_version <3 or 4> ]
 
 #more details
 ./nf-e2p2.sh --parameters
-
 
 #each parameter can be overwritten using command line syntax (--param) or adding it in config file
 
