@@ -83,5 +83,8 @@ lipme-bioinfo@inrae.fr
 
 ## Citations
 
-https://github.com/carnegie/E2P2
+- https://github.com/carnegie/E2P2
+- Di Tommaso, P., Chatzou, M., Floden, E. W., Barja, P. P., Palumbo, E., & Notredame, C. (2017). Nextflow enables reproducible computational workflows. Nature Biotechnology, 35(4), 316–319. doi:10.1038/nbt.3820
+- Kurtzer GM, Sochat V, Bauer MW (2017) Singularity: Scientific containers for mobility of compute. PLOS ONE 12(5): e0177459. https://doi.org/10.1371/journal.pone.0177459
+
 
